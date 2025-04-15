@@ -77,7 +77,7 @@ for (const member of teamMembers) {
   const { name, role, email, img } = member;
 
   cardsHTML += `
-   <div class="col-4 col-md-6 col-lg-3 mb-4">
+   <div class="col-12 col-md-6 col-lg-4 mb-4 d-flex justify-content-center">
      <div class="card" style="width: 18rem;">
        <img src="${img}" class="card-img-top" alt="${name}'s photo">
         <div class="card-body">
@@ -91,5 +91,6 @@ for (const member of teamMembers) {
 }
 
 teamContainer.innerHTML = cardsHTML;
-titleEl.innerText = "Team Members";
-descriptionEl.innerText = "Meet our amazing team of professionals.";
+titleEl.innerText = "Meet Our Team";
+descriptionEl.innerText =
+  "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum repellat adipisci nostrum animi cumque sint maiores in illum accusamus corrupti dicta, veritatis, porro fuga sapiente aut hic, totam asperiores aspernatur.";
