@@ -2,7 +2,7 @@
 //# (trovate l’array del team all’interno della cartella in allegato)
 //? Bonus
 //? Rendere l’esercizio responsive, mandando a capo le card
-//? Aggiungere un form di agginta membri che permetta di visualizzare il nuovo membro sulla pagina (usate una foto qualunque, anche vostra se volete sentirvi parte del team! :sorridere:)
+//? Aggiungere un form di aggiunta membri che permetta di visualizzare il nuovo membro sulla pagina (usate una foto qualunque, anche vostra se volete sentirvi parte del team! :sorridere:)
 
 //* ARRAY TEAM MEMBERS
 const teamMembers = [
@@ -43,3 +43,34 @@ const teamMembers = [
     img: "img/female3.png",
   },
 ];
+
+//* SELECTORS
+const teamContainer = document.getElementById("card-member-container");
+const titleEl = document.getElementById("title");
+const descriptionEl = document.getElementById("description");
+
+//* FUNCTIONS
+const createCard = (name, role, email, img) => {
+  const card = document.createElement("div");
+  card.classList.add("card");
+
+  const imgEl = document.createElement("img");
+  imgEl.src = img;
+  imgEl.alt = `${name}'s photo`;
+
+  const nameEl = document.createElement("h2");
+  nameEl.textContent = name;
+
+  const roleEl = document.createElement("p");
+  roleEl.textContent = role;
+
+  const emailEl = document.createElement("p");
+  emailEl.textContent = email;
+
+  card.appendChild(imgEl);
+  card.appendChild(nameEl);
+  card.appendChild(roleEl);
+  card.appendChild(emailEl);
+
+  return card;
+};
