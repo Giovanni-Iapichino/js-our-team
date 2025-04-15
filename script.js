@@ -48,49 +48,49 @@ const teamMembers = [
 const teamContainer = document.getElementById("card-member-container");
 const titleEl = document.getElementById("title");
 const descriptionEl = document.getElementById("description");
+const form = document.getElementById("add-member-form");
+const newMemberName = document.getElementById("name");
+const newMemberRole = document.getElementById("role");
+const newMemberEmail = document.getElementById("email");
+const newMemberImg = document.getElementById("img");
 
 //* FUNCTIONS
 const createCard = (name, role, email, img) => {
-  const card = document.createElement("div");
-  card.classList.add("card");
-
-  const imgEl = document.createElement("img");
-  imgEl.src = img;
-  imgEl.alt = `${name}'s photo`;
-
-  const nameEl = document.createElement("h2");
-  nameEl.innerText = name;
-
-  const roleEl = document.createElement("p");
-  roleEl.innerText = role;
-
-  const emailEl = document.createElement("p");
-  emailEl.innerText = email;
-
-  card.append(imgEl, nameEl, roleEl, emailEl);
-
-  return card;
+  return `<div class="col-12 col-md-3 col-lg-4 mb-4 mt-4 d-flex justify-content-center">
+  <div class="card" style="width: 18rem;">
+    <img src="${img}" class="card-img-top" alt="${name}'s photo">
+     <div class="card-body">
+      <p class="card-text">${name}</p>
+       <p class="card-text">${role}</p>
+         <p class="card-text">${email}</p>
+     </div>
+  </div>
+</div>`;
 };
 
-cardsHTML = ``;
+//* ADD CARD TO DOM
+let cardsHTML = ``;
 for (const member of teamMembers) {
   const { name, role, email, img } = member;
 
-  cardsHTML += `
-   <div class="col-12 col-md-3 col-lg-4 mb-4 mt-4 d-flex justify-content-center">
-     <div class="card" style="width: 18rem;">
-       <img src="${img}" class="card-img-top" alt="${name}'s photo">
-        <div class="card-body">
-         <p class="card-text">${name}</p>
-          <p class="card-text">${role}</p>
-            <p class="card-text">${email}</p>
-        </div>
-     </div>
-  </div>
-  `;
+  cardsHTML += createCard(name, role, email, img);
 }
 
 teamContainer.innerHTML = cardsHTML;
 titleEl.innerText = "Meet Our Team";
 descriptionEl.innerText =
   "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum repellat adipisci nostrum animi cumque sint maiores in illum accusamus corrupti dicta, veritatis, porro fuga sapiente aut hic, totam asperiores aspernatur.";
+
+//** ADD NEW MEMBER
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  // Prendi i valori dal form
+  const name = newMemberName.value;
+  const role = newMemberRole.value;
+  const email = newMemberEmail.value;
+  const img = newMemberImg.value;
+
+  teamContainer.innerHTML += createCard(name, role, email, img);
+});
