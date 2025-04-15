@@ -52,7 +52,7 @@ const form = document.getElementById("add-member-form");
 const newMemberName = document.getElementById("name");
 const newMemberRole = document.getElementById("role");
 const newMemberEmail = document.getElementById("email");
-const newMemberImg = document.getElementById("img");
+const newMemberImg = document.getElementById("image");
 
 //* FUNCTIONS
 const createCard = (name, role, email, img) => {
