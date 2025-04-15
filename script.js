@@ -71,3 +71,25 @@ const createCard = (name, role, email, img) => {
 
   return card;
 };
+
+cardsHTML = ``;
+for (const member of teamMembers) {
+  const { name, role, email, img } = member;
+
+  cardsHTML += `
+   <div class="col-4 col-md-6 col-lg-3 mb-4">
+     <div class="card" style="width: 18rem;">
+       <img src="${img}" class="card-img-top" alt="${name}'s photo">
+        <div class="card-body">
+         <p class="card-text">${name}</p>
+          <p class="card-text">${role}</p>
+            <p class="card-text">${email}</p>
+        </div>
+     </div>
+  </div>
+  `;
+}
+
+teamContainer.innerHTML = cardsHTML;
+titleEl.innerText = "Team Members";
+descriptionEl.innerText = "Meet our amazing team of professionals.";
