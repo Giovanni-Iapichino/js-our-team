@@ -67,10 +67,7 @@ const createCard = (name, role, email, img) => {
   const emailEl = document.createElement("p");
   emailEl.innerText = email;
 
-  card.appendChild(imgEl);
-  card.appendChild(nameEl);
-  card.appendChild(roleEl);
-  card.appendChild(emailEl);
+  card.append(imgEl, nameEl, roleEl, emailEl);
 
   return card;
 };
