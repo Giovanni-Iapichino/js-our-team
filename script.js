@@ -59,13 +59,13 @@ const createCard = (name, role, email, img) => {
   imgEl.alt = `${name}'s photo`;
 
   const nameEl = document.createElement("h2");
-  nameEl.textContent = name;
+  nameEl.innerText = name;
 
   const roleEl = document.createElement("p");
-  roleEl.textContent = role;
+  roleEl.innerText = role;
 
   const emailEl = document.createElement("p");
-  emailEl.textContent = email;
+  emailEl.innerText = email;
 
   card.appendChild(imgEl);
   card.appendChild(nameEl);
