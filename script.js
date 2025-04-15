@@ -57,7 +57,7 @@ const newMemberImg = document.getElementById("image");
 //* FUNCTIONS
 const createCard = (name, role, email, img) => {
   return `<div class="col-12 col-md-3 col-lg-4 mb-4 mt-4 d-flex justify-content-center">
-  <div class="card" style="width: 18rem;">
+  <div class="card border border-1" style="width: 18rem;">
     <img src="${img}" class="card-img-top" alt="${name}'s photo">
      <div class="card-body">
       <p class="card-text fw-bold">${name}</p>
